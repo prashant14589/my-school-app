@@ -1,0 +1,96 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<md-toolbar color="primary">
+    <span>XYZ SCHOOL</span>
+    <span class="spacer"></span>
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>fingerprint</md-icon>
+        <span>Login</span>
+      </button>
+      <button md-menu-item disabled>
+        <md-icon>announcement</md-icon>
+        <span>Issues</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>notifications_off</md-icon>
+        <span>Disable alerts</span>
+      </button>
+    </md-menu>
+</md-toolbar>
+<md-tab-group>
+  <md-tab label="Gallery">
+    <md-card *ngFor="let spaceScreen of spaceScreens; let i = index">
+      <img md-card-image src="{{ spaceScreen.img }}">
+      <md-card-content>
+        <p>{{ spaceScreen.description }}</p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="likeMe(i)">
+            <i class="material-icons md-18" [class.red-color]="spaceScreen.liked == '1'">favorite</i> LIKE
+        </button>
+        <button md-button (click)="deleteMe(i)">
+            <i class="material-icons md-18">delete</i> DELETE 
+        </button>
+      </md-card-actions>
+    </md-card>
+  </md-tab>
+  <md-tab label="About">
+      <!--<div id="page-padding">
+        <h1>Settings</h1>
+        <p>Here you can control the various settings associated with your app. There's no need to hit a save button, as the
+          values are updated automatically.</p>
+        <label>Number of Thumbnails</label>
+        <md-slider showTicks="true" max="100" min="0" step="1" thumbLabel="true" value="18">
+        </md-slider>
+        <md-slide-toggle>Some setting</md-slide-toggle>
+      </div>-->
+    <div class="col-xs-12">
+      <md-card class="highlights-section col-md-4">
+      <img md-card-image src="assets/images/featured-box-1.jpg">
+      <md-card-content>
+         <a href="#">STUDENT <span> EVENTS</span></a>
+      </md-card-content>      
+    </md-card> 
+   <md-card class="highlights-section col-md-4">
+      <img md-card-image src="assets/images/featured-box-2.jpg">
+      <md-card-content>
+         <a href="#">CLASSROOM <span> STORIES</span></a>
+      </md-card-content>      
+    </md-card>
+    <md-card class="highlights-section col-md-4">
+      
+      <img md-card-image src="assets/images/featured-box-3.jpg">
+      <md-card-content>
+        <a href="#">TEACHERS <span> PROFILE</span></a>
+      </md-card-content>      
+    </md-card>
+    </div>
+
+<section class="welcome">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7 col-md-7">
+						<div class="welcome-content">
+							<h3><span>Grandmaster Talk</span> EDUCATION IS THE MOST POWERFUL WEAPON</h3>
+							<p>Our students are talented, hard-working and full of good ideas. We encourage and empower them to bring their ideas to life. Hands-on opportunities are what we're all about. Our students are busy doing things that matter. Take a look at the opportunities you'll have at the University. The task of the modern educator is not to cut down jungles, but to irrigate deserts.</p>
+							<img src="./assets/images/signature.png" alt="signature">
+							<strong class="author">Katherine Gonzalez <span>Sekolah Grandmaster</span></strong>
+						</div>
+					</div>
+					
+					<div class="col-sm-5 col-md-5">
+						<div class="welcome-img">
+							<img src="./assets/images/welcome-img-1.jpg" alt="image">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+  </md-tab>
+</md-tab-group>
+
